@@ -1,9 +1,8 @@
 #!/bin/sh
 
 SUDO=
-if command -v sudo >/dev/null &&
-    sudo -l | grep -q -e ' ALL$' -e xbps-remove; then
-        SUDO=sudo
+if command -v sudo >/dev/null;
+    SUDO=sudo
 elif command -v doas >/dev/null && [ -f /etc/doas.conf ]; then
     SUDO=doas
 elif [ "$(whoami)" != root ]; then
