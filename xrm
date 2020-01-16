@@ -9,4 +9,4 @@ elif [ "$(whoami)" != root ]; then
     SUDO='su root -c '\''"$@"'\'' -- -'
 fi
 
-$SUDO xbps-remove -Ro "$@"
+$SUDO xbps-remove -R "$@"
